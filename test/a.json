@@ -1,0 +1,37 @@
+[
+    {
+        "tag": "pat",
+        "children": [
+            "a",
+            {
+                "tag": "more",
+                "attributes": {
+                    "b": "c"
+                },
+                "children": [
+                    " c\ndd"
+                ]
+            },
+            "aa",
+            {
+                "tag": "test",
+                "attributes": {
+                    "a": "1",
+                    "b": "2 4",
+                    "c": " dd d"
+                }
+            },
+            {
+                "tag": "ns:x",
+                "children": [
+                    {
+                        "tag": "y",
+                        "children": [
+                            "z"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
