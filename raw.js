@@ -54,7 +54,7 @@ export function parse(s) {
 }
 
 
-const XML = {
+export const XML = {
 	parse
 }
 
