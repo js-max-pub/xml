@@ -1,6 +1,6 @@
 
 // https://caniuse.com/?search=dotall
- function parse (s) {
+export function parse(s) {
 	// let res = [...s.matchAll(/\<\/?[a-z]+/gi)]
 	// let output = [];
 	let res = [...s.matchAll(/([\s\S]*?)\<(\/?[a-z\:]+)([\s\S]*?)(\/?)\>/gim)]
@@ -13,7 +13,7 @@
 	for (let item of res) {
 		// console.log(item)
 		let [full, text, tag, attr, end] = item
-		if(text.trim()) {
+		if (text.trim()) {
 			if (!currentTag.children) currentTag.children = [];
 
 			currentTag.children.push(text)
@@ -54,8 +54,8 @@
 }
 
 
-
-
-export default {
+const XML = {
 	parse
 }
+
+export default XML
