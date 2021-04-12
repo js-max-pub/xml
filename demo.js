@@ -1,4 +1,4 @@
-import XML from './raw.js';
+import XML from './mod.js';
 
 
 let c = XML.parse(`<pat>a<more b="c"> c
