@@ -1,0 +1,16 @@
+<root>
+	<a>
+		<aa id='1'>
+			<aaa>prose</aaa>
+		</aa>
+		<aa2/>
+		<aa id='2'> 
+		xyz
+		</aa>
+	</a>
+	some prose
+	<b class='good stuff'>
+		<bb class='very good stuff'/>
+	</b>
+	more prose
+</root>
