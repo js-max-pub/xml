@@ -17,7 +17,7 @@ export class XML {
 	}
 	get name() { return this.json?.tag }
 	get attributes() { return this.json?.attributes ?? {} }
-	get children() { return this.json?.children ?? [] }
+	get children() { return (this.json?.children ?? []).map(x => new XML(x)) }
 
 
 
