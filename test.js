@@ -16,33 +16,58 @@ let b = FS.file('test/b.xml', import.meta).text
 // 	console.log('deep', tag)
 
 
+
+
+
 b = XML.parse(b)
-for (let tag of b.deep())
-	console.log('tag', tag.name)
 
-console.log('----')
+// console.log(b.deep().toString())
 
-for (let tag of b.tags())
-	console.log(tag.name)
+// console.log('\n--------------\n')
 
-console.log('----')
+// console.log(b.tags('a').toString())
 
-for (let tag of b.tags('aa'))
-	console.log(tag.attributes)
+console.log('\n--------------\n')
 
-console.log('----')
+console.log(b.tags('a', 2).toString())
 
-for (let text of b.text())
-	console.log('text', text)
+console.log('\n--------------\n')
 
-console.log('----')
+console.log(b.tags('a').tags('aa').toString())
 
-console.log('id test', b.id('2')?.text({ raw: true }))
+console.log('\n--------------\n')
 
-console.log('----')
+console.log(b.tags('a').tags('aa').text())
 
-for (let tag of b.classes('good'))
-	console.log('tag', tag.name)
+console.log('\n--------------\n')
+
+console.log(b.classes('good').text({ maxDepth: 1 }))
+
+console.log('\n--------------\n')
+
+console.log(b.id(2).text())
+
+// for (let tag of b.tags())
+// 	console.log(tag.name)
+
+// console.log('----')
+
+// for (let tag of b.tags('aa'))
+// 	console.log(tag.attributes)
+
+// console.log('----')
+
+// for (let text of b.text())
+// 	console.log('text', text)
+
+// console.log('----')
+
+// console.log('id test', b.id('2')?.text({ raw: true }))
+
+// console.log('----')
+
+// for (let tag of b.classes('good'))
+// 	console.log('tag', tag.name)
 // console.log(tag.tag ? 'tag:' + tag.tag : 'txt:' + tag)
 // console.log('b', b)
 // for (let tag of XML.deep(b))

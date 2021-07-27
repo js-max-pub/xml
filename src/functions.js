@@ -57,15 +57,23 @@ export function parse(s) {
 
 
 
-export function text(tags) {
-	return deep(tags).filter(x => typeof x == 'string')
+export function text(tags, maxDepth) {
+	return deep(tags, maxDepth).filter(x => typeof x == 'string')
 }
 
-
-export function deep(tags) {
+function addProps(o, props = {}) {
+	if (typeof o != 'object') return o
+	for (let key in props)
+		o[key] = props[key]
+	return o
+}
+export function deep(tags, maxDepth = 100, depth = 0) {
+	// console.log('deep-f', tags?.constructor?.name)
+	if (tags?.constructor?.name == 'XML') tags = tags.json
 	// console.log('tags', tags)
+	if (depth > maxDepth) return []
 	if (!tags?.length) tags = tags?.children ?? []
-	return tags.map(tag => [tag, deep(tag?.children)]).flat(10)
+	return tags.map(tag => [addProps(tag, { depth }), deep(tag?.children, maxDepth, depth + 1)]).flat(10)
 }
 
 

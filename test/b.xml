@@ -1,7 +1,8 @@
 <root>
 	<a>
 		<aa id='1'>
-			<aaa>prose</aaa>
+			<aaa>prose<a/>
+			</aaa>
 		</aa>
 		<aa2/>
 		<aa id='2'> 
@@ -10,7 +11,8 @@
 	</a>
 	some prose
 	<b class='good stuff'>
-		<bb class='very good stuff'/>
+		<bb class='very good stuff'>very good text</bb>
+		good text
 	</b>
 	more prose
 </root>
