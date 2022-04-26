@@ -1,0 +1,3 @@
+<patient age='10'><address city='london' zip='12345'/>
+<location ward='15b' room='123' from='2021-02-13'/>
+<lab><test key='k' val="4.1">preliminary result</test></lab></patient>

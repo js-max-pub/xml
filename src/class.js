@@ -12,6 +12,9 @@ export class XML {
 	static parse(rawXML) {
 		return new XML(xml.parse(rawXML))
 	}
+	static stringify(tag) {
+		return xml.stringify(tag)
+	}
 
 
 	/**
@@ -100,13 +103,18 @@ export class XML {
 
 
 	get string() { return this.toString() }
-	toString() {
-		// console.log('log', this.type, this)
-		switch (this.type) {
-			case 'node': return `level ${this.json.depth} ${this.type}:   ${this.name.padEnd(10)}   a:${Object.keys(this.attributes).length}   c:${this.children.count}`
-			case 'list': return this.#list.map(x => x.toString()).join('\n')
-			case 'text': return '        text:   ' + this.json.trim()
-		}
+	// toString() {
+	// 	// console.log('log', this.type, this)
+	// 	switch (this.type) {
+	// 		case 'node': return `level ${this.json.depth} ${this.type}:   ${this.name.padEnd(10)}   a:${Object.keys(this.attributes).length}   c:${this.children.count}`
+	// 		case 'list': return this.#list.map(x => x.toString()).join('\n')
+	// 		case 'text': return '        text:   ' + this.json.trim()
+	// 	}
 
+	// }
+
+	toString() {
+		// console.log("TO STRING", this.json)
+		return this.json.map(x => xml.stringify(x))
 	}
 }

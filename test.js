@@ -7,7 +7,10 @@ import { FS } from 'https://jsv.max.pub/fs/2021/deno.js'
 let f = FS.folder('test', import.meta)
 // console.log(f.list)
 
-test.equal('test 1', XML.parse(f.file('a.xml').text), FS.file('test/a.json', import.meta).json)
+f.file('c.pretty.xml').text = XML.parse(f.file('c.xml').text).toString()
+test.equal('test 1', XML.parse(f.file('a.xml').text).json, FS.file('test/a.json', import.meta).json)
+
+FS.file('test/a.pretty.xml').text = XML.parse(f.file('a.xml').text).toString()
 
 let b = FS.file('test/b.xml', import.meta).text
 // console.log('b', b)

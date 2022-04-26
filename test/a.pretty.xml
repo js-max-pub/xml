@@ -1,0 +1,15 @@
+<pat>
+a
+	<more b="c" long-key="false">
+ c
+dd
+	</more>
+aa
+	<test a="1" b="2 4" c=" dd d"/>
+	<long-tag c="5"/>
+	<ns:x>
+		<y>
+z
+		</y>
+	</ns:x>
+</pat>
